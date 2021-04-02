@@ -1,4 +1,4 @@
-import './App.css';
+import '../App.css';
 import {AiOutlineAlignLeft, AiOutlineDown, AiOutlineFileGif, AiOutlinePicture, AiOutlineSmile, AiOutlineTwitter, AiTwotoneStar} from 'react-icons/ai';
 import {BiHomeCircle} from 'react-icons/bi';
 import {MdBookmarkBorder, MdMailOutline} from 'react-icons/md';
@@ -9,7 +9,7 @@ import {CgMoreO} from 'react-icons/cg';
 
 
 
-function App() { 
+function Home() { 
   return (
     <div className="App">
         <div className='Main'>
@@ -153,4 +153,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;
