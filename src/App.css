@@ -27,7 +27,7 @@ body{
   width: 20%;
   display: grid;
   height: 40rem;
-  background-color: beige;
+  background-color: white;
   justify-content: center;
 } 
 .right_div > div{
@@ -62,8 +62,7 @@ body{
 
 .Main_Area{
   width: 50%; 
-  display:grid;
-  height: 40rem;
+  
 }
 
 .Home{
@@ -82,10 +81,13 @@ body{
 
 
 .left_div{
-  width: 30%;
+  width: 25%;
   height: 40rem;
   display: grid;
-  background-color: blue;
+  background-color: white;
+  border : 1px grey solid ;
+  border-radius: 15px;
+  text-align: center;
 }
 
 .Create_post{
@@ -94,7 +96,9 @@ display: grid;
 background-color: white;
 border: 1px grey solid;
 padding: .5rem ;
+border-radius: 15px;
 }
+
 
 .Add_text{
 display: flex;
@@ -131,3 +135,45 @@ input::placeholder{font-size: 1rem;}
    font-size: 1rem;
    color: white;
  }
+
+ .btns-tweet{
+   border: 1px solid #cccccc;;
+   border-radius: 15px;
+   padding-right: 4px;
+   padding-top: 2px; 
+   font-family: inherit;
+   outline-style: none;
+   font-weight: bold;
+   background-color: #1da1f2;
+   color: white;
+   
+ }
+
+ .posted_area{
+  border : 1px grey solid ;
+  border-radius: 15px;
+ }
+
+ .profile{
+  display: flex;
+  justify-content: space-between;
+  padding: .5rem;
+ }
+
+ .user_detail{
+   display: flex;
+   align-items: center ;
+ }
+
+ user_detail > div {
+   padding: 0 2px;
+ }
+
+ .user_name {
+   font-size: .9rem;
+   font-weight: 600;
+}
+
+.user_id {
+  font-size: .8rem;
+}
