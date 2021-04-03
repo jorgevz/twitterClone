@@ -1,5 +1,6 @@
-import './App.css';
-import Home from './components/Home'
+import './css/App.css';
+import './css/Dashboard.css';
+import Routing from './components/Routing';
 
 
 
@@ -7,7 +8,7 @@ import Home from './components/Home'
 function App() { 
   return (
     <div className="App">
-  <Home/>
+        <Routing/>
     </div>       
   );
 }
