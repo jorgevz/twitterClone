@@ -1,4 +1,5 @@
 import './css/App.css';
+import  './css/Register.css'
 import './css/Dashboard.css';
 import Routing from './components/Routing';
 

@@ -1,38 +1,37 @@
+import {AiOutlineTwitter} from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 
-    import Home from './Home';
-    import {
-        BrowserRouter as Router,
-        Switch,
-        Route,
-        Link
-    } from 'react-router-dom'
-    import Dashboard from './Dashboard';
-    
-    
-    
+
+
 function Dashboard () {
- return(
- <Router>
+
+  return(
+   
+
+
   <div>
     
+<div className='register'>
+
+<AiOutlineTwitter color='#1DA1F2' fontSize="5rem"/>
+<h1>Join twitter </h1>
+<span>Have an account ? login</span>
+
+
+<Link to='/Login'  className='register-buttons'>Login</Link>
+<br/>
+<Link to='/Signup' className='register-buttons'>Sign Up</Link>
+
+</div>
+
+</div>
+
+
+     
     
-    <Switch>
-    
-    <Route exact path='/' component={Dashboard}/>
-    <Route exact path='/Login' component={Login}/>
-    <Route exact path='/Signup' component={Signup}/>
-    <Route exact path='/Home' component={Home}/>
-    
-    
-    
-    </Switch>
-    
-    
-    
-    </div>
-    </Router>
-        
- )
+   
+
+)
     
 }
 

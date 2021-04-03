@@ -1,0 +1,15 @@
+.form{
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ position: absolute;
+ top: 30vh;
+ left: 40vw;
+ align-items: center;
+ }
+
+.input{
+line-height: 30px;
+text-align: center;
+}
+        

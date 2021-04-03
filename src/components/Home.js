@@ -5,7 +5,8 @@ import {MdBookmarkBorder, MdMailOutline} from 'react-icons/md';
 import {FaUserCircle} from 'react-icons/fa' 
 import {BsCardText, BsSearch, BsBell} from 'react-icons/bs';
 import {CgMoreO} from 'react-icons/cg';
-
+import {Link} from 'react-router-dom'
+import Fire from './Fire'
 
 
 
@@ -66,6 +67,10 @@ function Home() {
                       <button className='btn'>
                         Tweet
                       </button>
+
+                      <Link onClick={() => Fire.auth().signOut()} to='/' className='btn'>
+                        Sign Out
+                      </Link>
                     </div>
       </div>  
 
