@@ -1,4 +1,4 @@
-import '../App.css';
+import '../css/App.css';
 import {AiOutlineAlignLeft, AiOutlineDown, AiOutlineFileGif, AiOutlinePicture, AiOutlineSmile, AiOutlineTwitter, AiTwotoneStar} from 'react-icons/ai';
 import {BiHomeCircle} from 'react-icons/bi';
 import {MdBookmarkBorder, MdMailOutline} from 'react-icons/md';
@@ -87,7 +87,7 @@ function Home() {
                   <div className='Profile'>
                       <img src='https://media-exp1.licdn.com/dms/image/C4D03AQEWM72541aVNw/profile-displayphoto-shrink_800_800/0/1605591186383?e=1622678400&v=beta&t=e_gUyc_ZwUGUyzvIdLM--gnXOBpMI1VgNd2NN09GQNM' alt='dp' style={{height: '35', width: '35px', borderRadius:'50%'}}/>
               </div>
-<input type="Post" placeholder="What's New ?"/>
+<input id='post' type="Post" placeholder="What's New ?"/>
             </div>
           </div>
           <div className="Btns">
@@ -139,7 +139,7 @@ function Home() {
   </div>
 <br/>
 <div className="profile_images">
-  <img src/> 
+  {/* <img src/>  */}
 </div>
 </div>
     </div>
