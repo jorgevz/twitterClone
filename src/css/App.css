@@ -1,0 +1,188 @@
+html{
+  font-size: 92.5%;
+  box-sizing:border-box;
+
+}
+
+body{
+  margin:0%; 
+  font: 1rem helvetica;
+  height: 100vh;
+}
+
+
+.App {
+  display:grid;
+  width: 100%; 
+  flex-wrap: wrap; 
+}
+
+.Main{
+  display: flex;
+  justify-content: space-between; 
+  margin: 12px 12px;
+} 
+
+.right_div{
+  width: 20%;
+  display: grid;
+  height: 40rem;
+  background-color: white;
+  justify-content: center;
+} 
+.right_div > div{
+ margin-top: 15px; 
+}
+
+.Icons {
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.Icons > div {
+  margin : 0 12px;
+}
+
+.Icons :hover {
+  border-radius: 15px;
+  background-color: #79cbfd;
+}
+
+.btn{
+  background-color: #1da1f2;
+  color: white;
+  width: 100%;
+  padding:  6px 12px;
+  border: none;
+  border-radius: 25px ;
+  font-size: 1rem;
+}
+
+.Main_Area{
+  width: 50%; 
+  
+}
+
+.Home{
+  display: flex;
+  justify-content: space-between;
+  height: 3rem;
+  align-items: center;
+  background-color: white;
+
+}
+
+.home{
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+
+.left_div{
+  width: 25%;
+  height: 40rem;
+  display: grid;
+  background-color: white;
+  border : 2px grey solid ;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.Create_post{
+height: 6rem;
+display: grid;
+background-color: white;
+border: 1px grey solid;
+padding: .5rem ;
+border-radius: 15px;
+}
+
+#post{
+width: 250px;
+line-height: 30px;
+border-radius: 15px;
+outline-style: none;
+font-size: 16px;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.Add_text{
+display: flex;
+align-items: center;
+}
+
+input [type='Post']{
+
+  height: 2rem;
+  border: none;
+
+}
+
+input::placeholder{font-size: 1rem;}
+.Btns{
+  display: flex;
+  justify-content: space-between;
+}
+
+ .Icons {
+   display: flex;
+ }
+
+ .Icons > div{
+   padding: 0 12px;
+ }
+
+ .btns-create{
+   background-color: #1da1f2;
+   border: none;
+   height: 2rem;
+   padding: 0 18px;
+   border-radius: 1rem;
+   font-size: 1rem;
+   color: white;
+ }
+
+ .btns-tweet{
+   border: 1px solid #cccccc;;
+   border-radius: 15px;
+   padding-right: 4px;
+   padding-top: 2px; 
+   font-family: inherit;
+   outline-style: none;
+   font-weight: bold;
+   background-color: #1da1f2;
+   color: white;
+   
+ }
+
+ .posted_area{
+  border : 1px grey solid ;
+  border-radius: 15px;
+ }
+
+ .profile{
+  display: flex;
+  justify-content: space-between;
+  padding: .5rem;
+ }
+
+ .user_detail{
+   display: flex;
+   align-items: center ;
+ }
+
+ user_detail > div {
+   padding: 0 2px;
+ }
+
+ .user_name {
+   font-size: .9rem;
+   font-weight: 600;
+}
+
+.user_id {
+  font-size: .8rem;
+}
+
