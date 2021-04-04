@@ -33,7 +33,7 @@ const Login = ({ history }) => {
     return(
        <div>
          <form class='form' onSubmit={handleLogin} >
-         <AiOutlineTwitter color='#1DA1F2' fontSize="5rem"/>
+         <AiOutlineTwitter color='#1DA1F2' fontSize="6rem"/>
            <h2>Login</h2>
         <input className='input' name="email" type="email" placeholder='email'/>
         <br/>
