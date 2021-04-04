@@ -7,10 +7,56 @@ import {BsCardText, BsSearch, BsBell} from 'react-icons/bs';
 import {CgMoreO} from 'react-icons/cg';
 import {Link} from 'react-router-dom'
 import Fire from './Fire'
+import React from 'react';
 
 
+class Home extends React.Component { 
+  constructor(props){
+  super(props)
+  
+  this.state = {
+    posts:[],
+    currentPost:{
+      text:'',
+      key:''
+    }
+  }
+  
+  this.addItem = this.addItem.bind(this);
+  this.handleInput = this.handleInput.bind(this);
+  this.deleteItem = this.deleteItem.bind(this);
+}
+addItem(e){
+  e.preventDefault();
+  const newItem = this.state.currentItem;
+  if(newItem.text !== ""){
+    const items = [...this.state.items, newItem];
+  this.setState({
+    items: items,
+    currentItem:{
+      text:'',
+      key:''
+    }
+  })
+  }
+}
+handleInput(e){
+  this.setState({
+    currentItem:{
+      text: e.target.value,
+      key: Date.now()
+    }
+  })
+}
+deleteItem(key){
+  const filteredItems= this.state.items.filter(item =>
+    item.key!==key);
+  this.setState({
+    items: filteredItems
+  })
 
-function Home() { 
+  } 
+  render(){
   return (
     <div className="App">
         <div className='Main'>
@@ -90,7 +136,7 @@ function Home() {
        <div className='Create_post'>
             <div className='Add_text'>
                   <div className='Profile'>
-                      <img src='https://media-exp1.licdn.com/dms/image/C4D03AQEWM72541aVNw/profile-displayphoto-shrink_800_800/0/1605591186383?e=1622678400&v=beta&t=e_gUyc_ZwUGUyzvIdLM--gnXOBpMI1VgNd2NN09GQNM' alt='dp' style={{height: '35', width: '35px', borderRadius:'50%'}}/>
+                      <img src='https://twirpz.files.wordpress.com/2015/06/twitter-avi-gender-balanced-figure.png?w=640' alt='dp' style={{height: '35', width: '35px', borderRadius:'50%'}}/>
               </div>
 <input id='post' type="Post" placeholder="What's New ?"/>
             </div>
@@ -129,9 +175,9 @@ function Home() {
 <div className='posted_area'>
   <div className="profile">
     <div className='user_detail'>
-<img src='https://media-exp1.licdn.com/dms/image/C4D03AQEWM72541aVNw/profile-displayphoto-shrink_800_800/0/1605591186383?e=1622678400&v=beta&t=e_gUyc_ZwUGUyzvIdLM--gnXOBpMI1VgNd2NN09GQNM' alt='dp' style={{height: '35', width: '35px', borderRadius:'50%'}}/>
-  <div className="user_name">Jorge Vasquez</div>
-    <div className="user_id">@Jorge_vz</div>
+<img src='https://twirpz.files.wordpress.com/2015/06/twitter-avi-gender-balanced-figure.png?w=640' alt='dp' style={{height: '35', width: '35px', borderRadius:'50%'}}/>
+  <div className="user_name">Random22</div>
+    <div className="user_id">@Random_user</div>
 </div>
 <div className="drop_down">
   <AiOutlineDown fontSize="1rem"/>
@@ -143,9 +189,7 @@ function Home() {
         Takes less energy to be nice than to be rude ! Being kind is key 🤗
   </div>
 <br/>
-<div className="profile_images">
-  {/* <img src/>  */}
-</div>
+
 </div>
     </div>
 
@@ -156,6 +200,7 @@ function Home() {
 
     </div>       
   );
+}
 }
 
 export default Home;
