@@ -13,7 +13,7 @@ const Signup = ({history}) => {
           await Fire
             .auth()
             .createUserWithEmailAndPassword(email.value, password.value);
-          history.push("/");
+          history.push("/Home");
         } catch (error)
         {
           alert(error);
