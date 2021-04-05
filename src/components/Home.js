@@ -1,5 +1,5 @@
 import '../css/App.css';
-import {AiOutlineAlignLeft, AiOutlineDown, AiOutlineFileGif, AiOutlinePicture, AiOutlineSmile, AiOutlineTwitter, AiTwotoneStar} from 'react-icons/ai';
+import {AiOutlineAlignLeft, AiOutlineFileGif, AiOutlinePicture, AiOutlineSmile, AiOutlineTwitter} from 'react-icons/ai';
 import {BiHomeCircle} from 'react-icons/bi';
 import {MdBookmarkBorder, MdMailOutline} from 'react-icons/md';
 import {FaUserCircle} from 'react-icons/fa' 
@@ -8,6 +8,7 @@ import {CgMoreO} from 'react-icons/cg';
 import {Link} from 'react-router-dom'
 import Fire from './Fire'
 import React from 'react';
+import Post from './Post';
 
 
 class Home extends React.Component { 
@@ -22,18 +23,18 @@ class Home extends React.Component {
     }
   }
   
-  this.addItem = this.addItem.bind(this);
+  this.addPost = this.addPost.bind(this);
   this.handleInput = this.handleInput.bind(this);
-  this.deleteItem = this.deleteItem.bind(this);
+  this.deletePost = this.deletePost.bind(this);
 }
-addItem(e){
+addPost(e){
   e.preventDefault();
-  const newItem = this.state.currentItem;
-  if(newItem.text !== ""){
-    const items = [...this.state.items, newItem];
+  const newPost = this.state.currentPost;
+  if(newPost.text !== ""){
+    const posts = [...this.state.posts, newPost];
   this.setState({
-    items: items,
-    currentItem:{
+    posts: posts,
+    currentPost:{
       text:'',
       key:''
     }
@@ -42,20 +43,35 @@ addItem(e){
 }
 handleInput(e){
   this.setState({
-    currentItem:{
+    currentPost:{
       text: e.target.value,
       key: Date.now()
     }
   })
 }
-deleteItem(key){
-  const filteredItems= this.state.items.filter(item =>
-    item.key!==key);
+deletePost  (key) {
+  const filteredPosts= this.state.posts.filter(post =>
+    post.key!==key);
   this.setState({
-    items: filteredItems
+    posts: filteredPosts
   })
 
   } 
+
+  setUpdate(text,key){
+    console.log("posts:"+this.state.posts);
+    const posts = this.state.posts;
+    posts.map(post=>{      
+      if(post.key === key){
+        console.log(post.key +"    "+key)
+        post.text= text;
+      }
+    })
+    this.setState({
+      posts: posts
+    })
+  }
+
   render(){
   return (
     <div className="App">
@@ -63,7 +79,7 @@ deleteItem(key){
 
             <div className='right_div'>
                 <div className='twitter'>
-                  <AiOutlineTwitter color='#1DA1F2' fontSize="2.3rem"/>
+                  <AiOutlineTwitter color='#1DA1F2' fontSize="3rem"/>
                 </div>
               
               
@@ -110,16 +126,19 @@ deleteItem(key){
                   
 
                     <div className='Icons'>
-                      <button className='btn'>
-                        Tweet
-                      </button>
-
+              
                       <Link onClick={() => Fire.auth().signOut()} to='/' className='btn'>
-                        Sign Out
+                        Log Out
                       </Link>
                     </div>
-      </div>  
 
+<div id='info'>
+<img src='https://twirpz.files.wordpress.com/2015/06/twitter-avi-gender-balanced-figure.png?w=640' alt='dp' style={{height: '35', width: '35px', borderRadius:'50%'}}/>                   
+                    <div className="user_name">Random22</div>
+    <div className="user_id">@Random_user</div>
+      </div>  
+    
+</div>
 
 
  <div className='Main_Area'>
@@ -127,20 +146,27 @@ deleteItem(key){
        <div className='home'>
                   Home
                </div>
-               <div className='Star_icon'>
-                 <AiTwotoneStar color='#1DA1F2' fontSize='2rem'/>
-               </div>
+               
           </div>
           <br/>
           <br/>
+
+          
        <div className='Create_post'>
+       <form onSubmit={this.addPost}>
             <div className='Add_text'>
                   <div className='Profile'>
                       <img src='https://twirpz.files.wordpress.com/2015/06/twitter-avi-gender-balanced-figure.png?w=640' alt='dp' style={{height: '35', width: '35px', borderRadius:'50%'}}/>
               </div>
-<input id='post' type="Post" placeholder="What's New ?"/>
+        <textarea id='post' type="text" placeholder="What's New ?" value={this.state.currentPost.text} onChange={this.handleInput} />
+        <button className="btns-tweet" type='submit'>Tweet..</button>
             </div>
+            </form>
+
+         
           </div>
+          
+
           <div className="Btns">
             <div className="Icons">
               
@@ -160,44 +186,47 @@ deleteItem(key){
       <AiOutlineSmile fontSize='1.5rem' color='1DA1F2'/>
               </div>
 
+
             </div>
 
-        <div className="Tweets">
-          <button className="btns-tweet">
-    Tweet...
-          </button>
-
-        </div>
+       
 
           </div>
        
 
-<div className='posted_area'>
-  <div className="profile">
-    <div className='user_detail'>
-<img src='https://twirpz.files.wordpress.com/2015/06/twitter-avi-gender-balanced-figure.png?w=640' alt='dp' style={{height: '35', width: '35px', borderRadius:'50%'}}/>
-  <div className="user_name">Random22</div>
-    <div className="user_id">@Random_user</div>
-</div>
-<div className="drop_down">
-  <AiOutlineDown fontSize="1rem"/>
-</div>
+<div>
 
+
+  <div className='posted_area'>
+
+<Post className='result' posts={this.state.posts} deletePost={this.deletePost} setUpdate={this.setUpdate}/>
+<p>{this.state.posts.text}</p>
   </div>
 
-  <div className='quote'>
-        Takes less energy to be nice than to be rude ! Being kind is key 🤗
-  </div>
 <br/>
 
 </div>
     </div>
 
-              <div className='left_div'>
-              <h2>Trends</h2>
+
+
+
+<div className='left_div'>
+
+<div>
+  <input type='text' placeholder='Search for friends..' id='search'/>
+</div>
+
+              <div id='trends'>
+              <h1>Trends</h1>
+              
+              
+          <h4>#covid19</h4>
+          
+          <h4>#JJ vaccine</h4>
               </div>  
       </div>
-
+</div>
     </div>       
   );
 }

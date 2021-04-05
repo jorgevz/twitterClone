@@ -13,7 +13,7 @@ const Signup = ({history}) => {
           await Fire
             .auth()
             .createUserWithEmailAndPassword(email.value, password.value);
-          history.push("/Home");
+          history.push("/Login");
         } catch (error)
         {
           alert(error);
@@ -29,7 +29,7 @@ const Signup = ({history}) => {
         <br/>
         <input name="password" type="password" className='input' placeholder='password'/>
         <br/>
-        <button type='submit' variant='info'>Register</button>
+        <button type='submit' >Register</button>
 
            </form>
 
